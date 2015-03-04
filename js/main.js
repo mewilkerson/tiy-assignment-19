@@ -35,6 +35,17 @@ $(function(){
   // calling with ajax, and iterating over each:
   $.ajax("js/data.json").done(function(data){
 
+    var firstData = data[0];
+
+    var theKeys = _.keys(firstData);
+
+    console.log(theKeys);
+
+    _.each(theKeys, function(key){
+
+      $(".headings").append($("<th />").text(key));
+
+    })
 
     _.each(data, function(datum){
                          // passing it some initial data (datum)
